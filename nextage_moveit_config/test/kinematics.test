@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find nextage_moveit_config)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="true"/>
+  </include>
+
+  <include file="$(find kinematics_base_test)/launch/test_kdl_plugin.launch">
+    <param name="tip_link" value="LARM_JOINT5_Link" />  <!-- EEF name in SRDF? -->
+    <param name="root_link" value="CHEST_JOINT0" />
+    <param name="group" value="left_arm" />
+    <param name="num_fk_tests" value="100" />
+    <param name="num_ik_tests" value="100" />
+    <param name="num_ik_cb_tests" value="100" />
+    <param name="num_ik_multiple_tests" value="100" />
+    <param name="ik_plugin_name" value="kdl_kinematics_plugin/KDLKinematicsPlugin" />
+    <rosparam param="joint_names">[LARM_JOINT0, LARM_JOINT1, LARM_JOINT2, LARM_JOINT3, LARM_JOINT4, LARM_JOINT5 ]</rosparam>  
+  </include>
+</launch>

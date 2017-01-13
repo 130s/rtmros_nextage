@@ -20,4 +20,5 @@ configure_file(${PROJECT_SOURCE_DIR}/NextageROS.desktop.in ${SETUP_DIRECTORY}/Ne
 add_custom_target(desktop ALL DEPENDS ${PROJECT_SOURCE_DIR}/NextageROS.desktop.in)
 
 add_rostest(test/joy.test)
+add_rostest(test/kinematics.test)
 add_rostest(test/nxo_moveit.test)
